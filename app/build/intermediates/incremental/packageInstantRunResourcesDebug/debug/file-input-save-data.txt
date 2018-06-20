@@ -1,0 +1,35 @@
+#Internal package file, do not edit.
+#Sun Jan 21 22:38:16 SGT 2018
+7.path=config.properties
+2.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+5.set=ASSET
+0.path=kt45.config
+2.baseType=DIRECTORY
+3.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+7.baseType=DIRECTORY
+2.set=ASSET
+1.path=kt50.config
+4.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+7.set=ASSET
+count=8
+5.baseType=DIRECTORY
+2.path=kt40q.config
+5.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+4.set=ASSET
+3.path=kt40.config
+6.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=kt45q.config
+7.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+6.set=ASSET
+1.baseType=DIRECTORY
+6.baseType=DIRECTORY
+5.path=kt55.config
+0.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+0.baseType=DIRECTORY
+3.set=ASSET
+6.path=kt80.config
+1.base=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\assets\\debug
+4.baseType=DIRECTORY
+0.set=ASSET

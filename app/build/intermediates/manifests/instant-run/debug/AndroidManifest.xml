@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.keredwell.fieldsales"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.keredwell.fieldsales.ApplicationContext"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/fsa"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.Main" >
+        <activity android:name="com.keredwell.fieldsales.ui.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.keredwell.fieldsales.ui.SettingsActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.SynchronizationActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.order.OrderListActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.orderlisting.OrderDetailActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.orderlisting.OrderListActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.order.CustomerListActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.order.ProductListActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.customer.CustomerListActivity" />
+        <activity
+            android:name="com.keredwell.fieldsales.ui.customer.CustomerDetailActivity"
+            android:label=""
+            android:parentActivityName="com.keredwell.fieldsales.ui.customer.CustomerListActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.product.ProductListActivity" />
+        <activity
+            android:name="com.keredwell.fieldsales.ui.product.ProductDetailActivity"
+            android:label=""
+            android:parentActivityName="com.keredwell.fieldsales.ui.product.ProductListActivity" />
+        <activity android:name="com.keredwell.fieldsales.ui.order.OrderCheckoutActivity" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.keredwell.fieldsales.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

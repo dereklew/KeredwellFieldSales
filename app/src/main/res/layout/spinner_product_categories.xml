@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/spinner_product_category"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:background="@color/theme_primary_accent"
+        android:paddingTop="@dimen/list_item_article_space"
+        android:paddingBottom="@dimen/list_item_article_space"
+        android:paddingLeft="@dimen/list_item_article_space"
+        android:paddingRight="@dimen/list_item_article_space"
+        android:layout_marginTop="@dimen/list_item_article_space"
+        android:layout_marginBottom="@dimen/list_item_article_space"/>
+
+    <Spinner
+        android:id="@+id/spinnerProductCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/list_item_article_space"
+        android:layout_marginRight="@dimen/list_item_article_space"
+        android:layout_marginBottom="@dimen/list_item_article_space"
+        style="style/TextAppearance.Medium"/>
+
+</LinearLayout>

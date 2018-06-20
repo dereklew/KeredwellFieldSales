@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="280dp"
+    android:fillViewport="true">
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/article_list"
+    android:name="com.keredwell.fieldsales.ui.order.OrderListFragment"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.keredwell.fieldsales.ui.order.OrderListActivity"
+    tools:layout="@android:layout/list_content"/>
+</ScrollView>

@@ -1,0 +1,165 @@
+<resources>
+    <string name="app_name">凯乐威 销售点</string>
+    <string name="drawer_open">菜单打开</string>
+    <string name="drawer_close">菜单 closed</string>
+    <string name="action_settings">设置</string>
+    <string name="action_checkout">结算</string>
+    <string name="action_print">打印订单</string>
+    <string name="action_send">发送订单</string>
+    <string name="search">搜索</string>
+    <string name="action_search">搜索</string>
+    <string name="action_filter">Filter</string>
+    <string name="title_activity_login">凯乐威 销售点</string>
+
+    <string name="backdrop">Backdrop</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
+    <!-- Strings related to login -->
+    <string name="localezhCn">简体中文</string>
+    <string name="localenUK">English (UK)</string>
+    <string name="prompt_user">账户名</string>
+    <string name="prompt_password">密码</string>
+    <string name="checkbox_password">显示密码</string>
+    <string name="title_sign_in">登录</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_user">你输入的密码和账户名不匹配</string>
+    <string name="error_invalid_password">账户名</string>
+    <string name="error_incorrect_password">账户名</string>
+    <string name="error_field_required">这是必填栏</string>
+    <string name="error_connection">登录失败，检查账户名与密码，再试一次</string>
+    <string name="permission_rationale">提供电子邮件需要联系人权限。</string>
+
+    <string name="title_products_list">商品</string>
+    <string name="title_products_detail">商品详情</string>
+    <string name="title_customers_list">客户</string>
+    <string name="title_customers_detail">客户详情</string>
+
+    <!-- Strings related to setting -->
+    <string name="setting_serverUri">Server URI</string>
+    <string name="setting_nameSpace">Namespace</string>
+    <string name="setting_lang">Language Code</string>
+    <string name="setting_clientId">Client ID</string>
+    <string name="setting_roleId">Role ID</string>
+    <string name="setting_orgId">Org ID</string>
+    <string name="setting_warehouseId">Warehouse ID</string>
+    <string name="setting_userServiceType">User Service Type</string>
+    <string name="setting_bpartnerServiceType">B Partner Service Type</string>
+    <string name="setting_bpartnerLocationServiceType">B Partner Location Service Type</string>
+    <string name="setting_locationServiceType">Location Service Type</string>
+    <string name="setting_bpGroupServiceType">BP Group Service Type</string>
+    <string name="setting_productCategoryServiceType">Product Category Service Type</string>
+    <string name="setting_productServiceType">Product Service Type</string>
+    <string name="setting_productPriceServiceType">Product Price Service Type</string>
+    <string name="setting_pricelistVersionServiceType">Pricelist Version Service Type</string>
+    <string name="setting_orderServiceType">Order Service Type</string>
+    <string name="setting_orderlineServiceType">OrderLine Service Type</string>
+    <string name="setting_orderReceiveServiceType">Order Receive Service Type</string>
+    <string name="setting_orderlineReceiveServiceType">OrderLine Receive Service Type</string>
+    <string name="setting_orderDocIDServiceType">Order Document ID Service Type</string>
+    <string name="setting_processOrderServiceType">Process Order Service Type</string>
+    <string name="setting_c_paymentterm_id_cash">C_PaymentTerm_ID for Cash</string>
+    <string name="setting_c_paymentterm_id_credit">C_PaymentTerm_ID for Credit</string>
+    <string name="setting_c_doctypetarget_id_cash">C_DocTypeTarget_ID for Cash</string>
+    <string name="setting_c_doctypetarget_id_credit">C_DocTypeTarget_ID for Credit</string>
+    <string name="setting_c_currency_id">C_Curency_ID</string>
+    <string name="setting_print_width">Print Width</string>
+    <string name="setting_print_height">C_Cuurency_ID</string>
+
+    <!-- Strings related to synchronization -->
+    <string name="synchronization_sync">同步</string>
+    <string name="instructionforsync">点击以下按钮以开始同步.</string>
+    <string name="wanttosync">开始同步?.</string>
+    <string name="synchronization_title">同步</string>
+    <string name="synchronization_failed">失败. 请再尝试.</string>
+    <string name="synchronization_failed_sync">失败. 请在同步菜单里再尝试.</string>
+
+    <string name="tax">税</string>
+
+    <!-- Strings related to footer order total -->
+    <string name="order_total">价税合计</string>
+
+    <!-- Strings related to footer order sub total -->
+    <string name="order_subtotal">合计</string>
+
+    <string name="dashedline">-------------------------------</string>
+    <string name="signature">Goods received in good condition</string>
+
+    <!-- Strings related to header customer -->
+    <string name="header_customer_name">客户名字</string>
+    <string name="header_customer_address">地址</string>
+    <string name="header_customer_tel">电话</string>
+
+    <string name="header_date">日期</string>
+
+    <!-- Strings related to header order -->
+    <string name="header_order_product_name">商品</string>
+    <string name="header_order_qty">数量</string>
+    <string name="header_order_unit_price">单价</string>
+    <string name="header_order_price">金额</string>
+
+    <!-- Strings related to header order customer -->
+    <string name="header_order_customer_name">客户名字</string>
+    <string name="header_order_customer_address">地址</string>
+    <string name="header_order_customer_tel">电话</string>
+
+    <!-- Strings related to header order product -->
+    <string name="header_order_product_unit_price">单价</string>
+
+    <!-- Strings related to header product -->
+    <string name="header_product_name">商品名称</string>
+    <string name="header_product_qty">数量</string>
+    <string name="header_product_unit_price">单价</string>
+
+    <!-- Strings related to spinner customer groups -->
+    <string name="spinner_customer_group">客户类别</string>
+    <string name="spinner_customer_customer">客户</string>
+
+    <!-- Strings related to spinner product cateogories -->
+    <string name="spinner_product_category">商品类别</string>
+    <string name="spinner_product_category_product">商品</string>
+
+    <string name="navigation_title">菜单</string>
+    <string name="navigation_sales">销售</string>
+    <string name="navigation_history">销售记录</string>
+    <string name="navigation_settings">设置</string>
+    <string name="navigation_products">商品</string>
+    <string name="navigation_customers">客户</string>
+    <string name="navigation_sub_items">其他</string>
+    <string name="navigation_synchronization">同步</string>
+    <string name="navigation_logout">退出</string>
+
+    <string name="settings">设置</string>
+    <string name="article_detail_more_info">更多详情</string>
+
+    <string name="address_label">地址</string>
+    <string name="postal_label">邮区</string>
+    <string name="tel_label">电话</string>
+
+    <string name="quantity_label">数量</string>
+    <string name="unitprice_label">单价</string>
+
+    <!-- Strings related to printing -->
+    <string name="printer_order">打印订单</string>
+    <string name="printer_connected">链接成功.</string>
+    <string name="printer_unconnected">链接失败.</string>
+    <string name="wanttoprint">你要打印收据吗?</string>
+
+    <!-- Strings related to cash or credit dialog -->
+    <string name="payment_term">付款方式</string>
+    <string name="cash_or_credit_message">现款或者信用?</string>
+    <string name="cash_or_credit_credit">信用</string>
+    <string name="cash_or_credit_cash">现款</string>
+
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="yes">确定</string>
+    <string name="no">取消</string>
+    <string name="succeeded">成功</string>
+    <string name="failed">失败</string>
+
+    <string name="tab_completed">已完成</string>
+    <string name="tab_incomplete">未完成</string>
+    <string name="tab_not_sync">未同步</string>
+</resources>

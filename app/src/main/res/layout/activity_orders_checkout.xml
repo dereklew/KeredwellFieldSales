@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ProgressBar
+        android:id="@+id/order_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:fillViewport="true">
+        <LinearLayout
+            android:id="@+id/order_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/include_toolbar" />
+            <include layout="@layout/include_checkout_view" />
+            <include layout="@layout/list_header_order_checkout" />
+            <include layout="@layout/include_list_view_ordercheckout" />
+            <include layout="@layout/list_footer_order_subtotal" />
+            <include layout="@layout/include_tax" />
+            <include layout="@layout/list_footer_order_total" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/include_navigation" />
+
+</android.support.v4.widget.DrawerLayout>

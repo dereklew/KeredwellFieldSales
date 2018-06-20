@@ -1,0 +1,4 @@
+#Tue Jun 19 15:39:26 SGT 2018
+base.0=E\:\\Lew\\KeredwellFieldSales\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\42
+path.0=classes.dex
+renamed.0=classes.dex

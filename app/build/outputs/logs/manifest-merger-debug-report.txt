@@ -1,0 +1,232 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+MERGED from [com.android.support:design:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\design-25.1.1.aar\9b7a96ede3fb6c4de4a9a9572752b2b0\AndroidManifest.xml:17:1-27:12
+MERGED from [com.speedata:deivice:1.4.3] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\deivice-1.4.3.aar\079eb36df3d25038fb9a5f677c4fc8f9\AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:appcompat-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.1.aar\ae4a21ecbce20cc1f83ae5b16da0bfe1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:cardview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.1.1.aar\ede2e65aa11bcd838564bbe0f694e9a2\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v13:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v13-25.1.1.aar\20080acb68c9fbace627310e3e662721\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:recyclerview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.1.1.aar\06b0904b4afb519e9145f972c843400d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\transition-25.1.1.aar\2d90635b37429ce64f113758acc5c55d\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.1.aar\5650f963d8d0f4ce319cc026e02f4202\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-fragment:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-fragment-25.1.1.aar\7e59e9fb62fd081f1026dc5ca0bfe066\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.1.aar\b5c27b87ccbf33bb1470a99754b5bb38\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.1.aar\a6cb98ee26792dea0d7ea18c4778b6b7\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.1.aar\c937893e296938d97024f54304f290d1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.1.aar\c2f38f430d94886e6f88119de4437803\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.1.aar\391ff5779de904079dc3fb57fb4e0849\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.1.aar\eb6f2fd9b16c5f7c16214141a497990e\AndroidManifest.xml:17:1-27:12
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+	package
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:2:1-35
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:1-58:12
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:4:5-78
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:4:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:5:22-65
+uses-permission#android.permission.WRITE_INTERNAL_STORAGE
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:7:5-68
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:7:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:8:5-74
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:8:22-71
+uses-permission#android.permission.INTERNET
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:9:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:11:22-78
+application
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:13:1-56:15
+MERGED from [com.android.support:design:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\design-25.1.1.aar\9b7a96ede3fb6c4de4a9a9572752b2b0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:design:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\design-25.1.1.aar\9b7a96ede3fb6c4de4a9a9572752b2b0\AndroidManifest.xml:25:5-20
+MERGED from [com.speedata:deivice:1.4.3] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\deivice-1.4.3.aar\079eb36df3d25038fb9a5f677c4fc8f9\AndroidManifest.xml:11:5-15:19
+MERGED from [com.speedata:deivice:1.4.3] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\deivice-1.4.3.aar\079eb36df3d25038fb9a5f677c4fc8f9\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:appcompat-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.1.aar\ae4a21ecbce20cc1f83ae5b16da0bfe1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.1.aar\ae4a21ecbce20cc1f83ae5b16da0bfe1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:cardview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.1.1.aar\ede2e65aa11bcd838564bbe0f694e9a2\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.1.1.aar\ede2e65aa11bcd838564bbe0f694e9a2\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v13:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v13-25.1.1.aar\20080acb68c9fbace627310e3e662721\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v13:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v13-25.1.1.aar\20080acb68c9fbace627310e3e662721\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\transition-25.1.1.aar\2d90635b37429ce64f113758acc5c55d\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:transition:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\transition-25.1.1.aar\2d90635b37429ce64f113758acc5c55d\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.1.aar\5650f963d8d0f4ce319cc026e02f4202\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.1.aar\5650f963d8d0f4ce319cc026e02f4202\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-fragment-25.1.1.aar\7e59e9fb62fd081f1026dc5ca0bfe066\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-fragment-25.1.1.aar\7e59e9fb62fd081f1026dc5ca0bfe066\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.1.aar\b5c27b87ccbf33bb1470a99754b5bb38\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.1.aar\b5c27b87ccbf33bb1470a99754b5bb38\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.1.aar\a6cb98ee26792dea0d7ea18c4778b6b7\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.1.aar\a6cb98ee26792dea0d7ea18c4778b6b7\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.1.aar\c937893e296938d97024f54304f290d1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.1.aar\c937893e296938d97024f54304f290d1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.1.aar\c2f38f430d94886e6f88119de4437803\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.1.aar\c2f38f430d94886e6f88119de4437803\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.1.aar\391ff5779de904079dc3fb57fb4e0849\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.1.aar\391ff5779de904079dc3fb57fb4e0849\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.1.aar\eb6f2fd9b16c5f7c16214141a497990e\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.1.aar\eb6f2fd9b16c5f7c16214141a497990e\AndroidManifest.xml:25:5-20
+	android:supportsRtl
+		ADDED from [com.speedata:deivice:1.4.3] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\deivice-1.4.3.aar\079eb36df3d25038fb9a5f677c4fc8f9\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:17:5-37
+	android:icon
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:16:5-31
+	android:allowBackup
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:15:5-31
+	android:theme
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:18:5-38
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:14:5-63
+activity#com.keredwell.fieldsales.ui.LoginActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:20:5-26:16
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:20:15-71
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:21:9-25:25
+action#android.intent.action.MAIN
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:22:13-65
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:22:21-62
+category#android.intent.category.DEFAULT
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:23:13-72
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:23:23-69
+category#android.intent.category.LAUNCHER
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:24:13-73
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:24:23-70
+activity#com.keredwell.fieldsales.ui.SettingsActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:28:5-76
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:28:15-74
+activity#com.keredwell.fieldsales.ui.SynchronizationActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:30:5-83
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:30:15-81
+activity#com.keredwell.fieldsales.ui.order.OrderListActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:32:5-83
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:32:15-81
+activity#com.keredwell.fieldsales.ui.orderlisting.OrderDetailActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:34:5-92
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:34:15-90
+activity#com.keredwell.fieldsales.ui.orderlisting.OrderListActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:36:5-90
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:36:15-88
+activity#com.keredwell.fieldsales.ui.order.CustomerListActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:38:5-86
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:38:15-84
+activity#com.keredwell.fieldsales.ui.order.ProductListActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:40:5-85
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:40:15-83
+activity#com.keredwell.fieldsales.ui.customer.CustomerListActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:42:5-89
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:42:15-87
+activity#com.keredwell.fieldsales.ui.customer.CustomerDetailActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:44:5-46:97
+	android:parentActivityName
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:46:9-95
+	android:label
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:45:9-25
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:44:15-89
+activity#com.keredwell.fieldsales.ui.product.ProductListActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:48:5-87
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:48:15-85
+activity#com.keredwell.fieldsales.ui.product.ProductDetailActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:50:5-52:95
+	android:parentActivityName
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:52:9-93
+	android:label
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:51:9-25
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:50:15-87
+activity#com.keredwell.fieldsales.ui.order.OrderCheckoutActivity
+ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:54:5-87
+	android:name
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml:54:15-85
+uses-sdk
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\design-25.1.1.aar\9b7a96ede3fb6c4de4a9a9572752b2b0\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\design-25.1.1.aar\9b7a96ede3fb6c4de4a9a9572752b2b0\AndroidManifest.xml:21:5-23:62
+MERGED from [com.speedata:deivice:1.4.3] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\deivice-1.4.3.aar\079eb36df3d25038fb9a5f677c4fc8f9\AndroidManifest.xml:7:5-9:41
+MERGED from [com.speedata:deivice:1.4.3] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\deivice-1.4.3.aar\079eb36df3d25038fb9a5f677c4fc8f9\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.1.aar\ae4a21ecbce20cc1f83ae5b16da0bfe1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.1.aar\ae4a21ecbce20cc1f83ae5b16da0bfe1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:cardview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.1.1.aar\ede2e65aa11bcd838564bbe0f694e9a2\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.1.1.aar\ede2e65aa11bcd838564bbe0f694e9a2\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v13:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v13-25.1.1.aar\20080acb68c9fbace627310e3e662721\AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:support-v13:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v13-25.1.1.aar\20080acb68c9fbace627310e3e662721\AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:recyclerview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.1.1.aar\06b0904b4afb519e9145f972c843400d\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.1.1.aar\06b0904b4afb519e9145f972c843400d\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\transition-25.1.1.aar\2d90635b37429ce64f113758acc5c55d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\transition-25.1.1.aar\2d90635b37429ce64f113758acc5c55d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.1.aar\5650f963d8d0f4ce319cc026e02f4202\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.1.aar\5650f963d8d0f4ce319cc026e02f4202\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-fragment-25.1.1.aar\7e59e9fb62fd081f1026dc5ca0bfe066\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-fragment-25.1.1.aar\7e59e9fb62fd081f1026dc5ca0bfe066\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.1.aar\b5c27b87ccbf33bb1470a99754b5bb38\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.1.aar\b5c27b87ccbf33bb1470a99754b5bb38\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.1.aar\a6cb98ee26792dea0d7ea18c4778b6b7\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.1.aar\a6cb98ee26792dea0d7ea18c4778b6b7\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.1.aar\c937893e296938d97024f54304f290d1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.1.aar\c937893e296938d97024f54304f290d1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:animated-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.1.aar\c2f38f430d94886e6f88119de4437803\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.1.aar\c2f38f430d94886e6f88119de4437803\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.1.aar\391ff5779de904079dc3fb57fb4e0849\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.1.aar\391ff5779de904079dc3fb57fb4e0849\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.1.aar\eb6f2fd9b16c5f7c16214141a497990e\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.1.aar\eb6f2fd9b16c5f7c16214141a497990e\AndroidManifest.xml:21:5-23:58
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.1.1] C:\Users\Derek\.gradle\caches\transforms-1\files-1.1\design-25.1.1.aar\9b7a96ede3fb6c4de4a9a9572752b2b0\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+		ADDED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Lew\KeredwellFieldSales\app\src\main\AndroidManifest.xml
