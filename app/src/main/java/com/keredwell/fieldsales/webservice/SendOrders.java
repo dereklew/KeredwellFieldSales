@@ -13,10 +13,6 @@ import java.util.Iterator;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 3/12/2017.
- */
-
 public class SendOrders {
     private static final String TAG = makeLogTag(SendOrders.class);
 
@@ -58,9 +54,11 @@ public class SendOrders {
             for (Iterator<C_Order> i = c_orders.iterator(); i.hasNext();) {
                 C_Order c_order = i.next();
                 if (c_order.getC_Order_ID() > 0) {
-                    String retval = ProcessOrderWS.WSEvent(mUser, mPassword, c_order.getC_Order_ID());
-                    if (retval.equals("") == false) {
-                        odb.updateProcessC_OrderRetVal(c_order.getID(), retval, new Date(), c_order.getIsCash());
+                    if (c_order.getSalesRep_ID() == Long.parseLong(mUser)) {
+                        String retval = ProcessOrderWS.WSEvent(mUser, mPassword, c_order.getC_Order_ID());
+                        if (retval.equals("") == false) {
+                            odb.updateProcessC_OrderRetVal(c_order.getID(), retval, new Date(), c_order.getIsCash());
+                        }
                     }
                 }
             }

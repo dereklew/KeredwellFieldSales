@@ -13,10 +13,6 @@ import java.util.Date;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 25/11/2017.
- */
-
 public class M_Pricelist_VersionWS {
     private static final String TAG = makeLogTag(M_Pricelist_VersionWS.class);
 
@@ -43,7 +39,6 @@ public class M_Pricelist_VersionWS {
             SoapObject queryData = new SoapObject(PropUtil.getProperty("nameSpace"), "queryData");
             queryData.addSoapObject(modelCRUDRequest);
 
-            //request to server and get Soap Primitive response
             return parseXml(WebServiceCall.callWSThreadSoapPrimitive(queryData));
 
         } catch (Exception e) {

@@ -6,10 +6,6 @@ import org.ksoap2.serialization.SoapObject;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 25/11/2017.
- */
-
 public class ADLoginRequest {
     private static final String TAG = makeLogTag(ADLoginRequest.class);
 

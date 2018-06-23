@@ -11,10 +11,6 @@ import java.math.BigDecimal;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 25/11/2017.
- */
-
 public class C_OrderSendWS {
     private static final String TAG = makeLogTag(C_OrderSendWS.class);
 
@@ -209,10 +205,6 @@ public class C_OrderSendWS {
             C_Order_ID.addAttribute("column", "C_Order_ID");
             C_Order_ID.addProperty("val", c_order.getC_Order_ID());
 
-            //SoapObject DocumentNo = new SoapObject(PropUtil.getProperty("nameSpace"), "field");
-            //DocumentNo.addAttribute("column", "DocumentNo");
-            //DocumentNo.addProperty("val", c_order.getDocumentID());
-
             SoapObject dataRow = new SoapObject(PropUtil.getProperty("nameSpace"), "DataRow");
             dataRow.addSoapObject(IsActive);
             dataRow.addSoapObject(IsSOTrx);
@@ -261,7 +253,6 @@ public class C_OrderSendWS {
             dataRow.addSoapObject(IsPayScheduleValid);
             dataRow.addSoapObject(IsPriviledgedRate);
             dataRow.addSoapObject(C_Order_ID);
-            //dataRow.addSoapObject(DocumentNo);
 
             SoapObject modelCRUD = new SoapObject(PropUtil.getProperty("nameSpace"), "ModelCRUD");
             modelCRUD.addProperty("serviceType", PropUtil.getProperty("orderServiceType"));
@@ -276,7 +267,6 @@ public class C_OrderSendWS {
             SoapObject queryData = new SoapObject(PropUtil.getProperty("nameSpace"), "createUpdateData");
             queryData.addSoapObject(modelCRUDRequest);
 
-            //request to server and get Soap Primitive response
             return parseXml(WebServiceCall.callWSThreadSoapPrimitive(queryData));
 
         } catch (Exception e) {

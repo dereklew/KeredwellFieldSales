@@ -9,10 +9,6 @@ import rego.printlib.export.regoPrinter;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 1/11/2017.
- */
-
 public class ApplicationContext extends Application {
     private static final String TAG = makeLogTag(ApplicationContext.class);
 

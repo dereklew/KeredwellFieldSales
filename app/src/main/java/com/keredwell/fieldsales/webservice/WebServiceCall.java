@@ -10,30 +10,31 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 7/11/2017.
- */
-
 public class WebServiceCall {
     private static final String TAG = makeLogTag(WebServiceCall.class);
 
     public static SoapObject callWSThreadSoapPrimitive(SoapObject request) {
 
-        try {
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-            envelope.dotNet = true;
-            envelope.setOutputSoapObject(request);
-            HttpTransportSE ht = new HttpTransportSE(PropUtil.getProperty("serverUri"));
-            ht.debug = true;
-            ht.call("", envelope);
-            LogUtil.logD(TAG,"dump Request: " + ht.requestDump);
-            LogUtil.logD(TAG,"dump response: " + ht.responseDump);
-            SoapObject response = (SoapObject) envelope.getResponse();
+        int counter = 2;
 
-            return response;
-        } catch (Exception e) {
-            LogUtil.logE(TAG, e.getMessage(), e);
-            return null;
+        while(counter != 0) {
+            try {
+                SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                envelope.dotNet = true;
+                envelope.setOutputSoapObject(request);
+                HttpTransportSE ht = new HttpTransportSE(PropUtil.getProperty("serverUri"));
+                ht.debug = true;
+                ht.call("", envelope);
+                LogUtil.logD(TAG, "dump Request: " + ht.requestDump);
+                LogUtil.logD(TAG, "dump response: " + ht.responseDump);
+                SoapObject response = (SoapObject) envelope.getResponse();
+
+                return response;
+            } catch (Exception e) {
+                LogUtil.logE(TAG, e.getMessage(), e);
+                counter -=1;
+            }
         }
+        return null;
     }
 }

@@ -11,10 +11,6 @@ import java.math.BigDecimal;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 25/11/2017.
- */
-
 public class C_OrderLineSendWS {
     private static final String TAG = makeLogTag(C_OrderLineSendWS.class);
 
@@ -176,7 +172,6 @@ public class C_OrderLineSendWS {
             SoapObject queryData = new SoapObject(PropUtil.getProperty("nameSpace"), "createUpdateData");
             queryData.addSoapObject(modelCRUDRequest);
 
-            //request to server and get Soap Primitive response
             return parseXml(WebServiceCall.callWSThreadSoapPrimitive(queryData));
 
         } catch (Exception e) {

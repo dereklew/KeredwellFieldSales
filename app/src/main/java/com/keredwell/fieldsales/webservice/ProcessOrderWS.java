@@ -8,10 +8,6 @@ import org.ksoap2.serialization.SoapPrimitive;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 25/11/2017.
- */
-
 public class ProcessOrderWS {
     private static final String TAG = makeLogTag(ProcessOrderWS.class);
 
@@ -34,7 +30,6 @@ public class ProcessOrderWS {
             SoapObject queryData = new SoapObject(PropUtil.getProperty("nameSpace"), "runProcess");
             queryData.addSoapObject(modelCRUDRequest);
 
-            //request to server and get Soap Primitive response
             return parseXml(WebServiceCall.callWSThreadSoapPrimitive(queryData));
 
         } catch (Exception e) {
@@ -47,7 +42,7 @@ public class ProcessOrderWS {
         try{
             if (soap.getPropertyCount() == 2)
             {
-                if (((SoapPrimitive)soap.getProperty(0)) != null)
+                if ((soap.getProperty(0)) != null)
                     return ((SoapPrimitive)soap.getProperty(0)).getValue().toString();
             }
             return "";

@@ -11,10 +11,6 @@ import org.ksoap2.serialization.SoapObject;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 25/11/2017.
- */
-
 public class C_Order_DocumentIDWS {
     private static final String TAG = makeLogTag(C_Order_DocumentIDWS.class);
 
@@ -34,7 +30,6 @@ public class C_Order_DocumentIDWS {
             SoapObject queryData = new SoapObject(PropUtil.getProperty("nameSpace"), "readData");
             queryData.addSoapObject(modelCRUDRequest);
 
-            //request to server and get Soap Primitive response
             return parseXml(WebServiceCall.callWSThreadSoapPrimitive(queryData));
 
         } catch (Exception e) {
@@ -49,7 +44,6 @@ public class C_Order_DocumentIDWS {
             {
                 if (soap.getProperty(2).toString().equals("true")) {
                     C_OrderDBAdapter c_orderDBAdapter = new C_OrderDBAdapter(ApplicationContext.getAppContext());
-                    C_BPartnerDBAdapter c_bPartnerDBAdapter = new C_BPartnerDBAdapter(ApplicationContext.getAppContext());
                     for(int i=0; i<Integer.parseInt(soap.getProperty(1).toString()); i++) {
 
                         C_Order c_order = c_orderDBAdapter.getC_OrderByC_Order_ID(Long.parseLong(((SoapObject)((SoapObject)((SoapObject)soap.getProperty(0)).getProperty(i)).getProperty(0)).getProperty(0).toString()));

@@ -1,9 +1,9 @@
 package com.keredwell.fieldsales.webservice;
 
 import com.keredwell.fieldsales.ApplicationContext;
+import com.keredwell.fieldsales.data.AD_User_Roles;
+import com.keredwell.fieldsales.dbhelper.AD_User_RolesDBAdapter;
 import com.keredwell.fieldsales.util.DateUtil;
-import com.keredwell.fieldsales.data.M_Product;
-import com.keredwell.fieldsales.dbhelper.M_ProductDBAdapter;
 import com.keredwell.fieldsales.util.LogUtil;
 import com.keredwell.fieldsales.util.PropUtil;
 
@@ -13,8 +13,9 @@ import java.util.Date;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-public class M_ProductWS {
-    private static final String TAG = makeLogTag(M_ProductWS.class);
+public class AD_User_RolesWS {
+
+    private static final String TAG = makeLogTag(AD_User_RolesWS.class);
 
     public static Boolean WSEvent(String mUser, String mPassword, Date lastUpdatedDate)
     {
@@ -27,7 +28,7 @@ public class M_ProductWS {
             dataRow.addSoapObject(field);
 
             SoapObject modelCRUD = new SoapObject(PropUtil.getProperty("nameSpace"), "ModelCRUD");
-            modelCRUD.addProperty("serviceType", PropUtil.getProperty("productServiceType"));
+            modelCRUD.addProperty("serviceType", PropUtil.getProperty("adUserRolesServiceType"));
             modelCRUD.addSoapObject(dataRow);
 
             SoapObject aDLoginRequest = ADLoginRequest.GetADLoginRequest(mUser, mPassword);
@@ -52,31 +53,21 @@ public class M_ProductWS {
             if (soap.getPropertyCount() == 3)
             {
                 if (soap.getProperty(2).toString().equals("true")) {
+                    AD_User_RolesDBAdapter db = new AD_User_RolesDBAdapter(ApplicationContext.getAppContext());
                     for(int i=0; i<Integer.parseInt(soap.getProperty(1).toString()); i++) {
 
-                        M_Product c_bpartner = new M_Product();
+                        AD_User_Roles ad_user_roles = new AD_User_Roles();
 
-                        c_bpartner.setM_Product_ID(Long.parseLong(((SoapObject)((SoapObject)((SoapObject)soap.getProperty(0)).getProperty(i)).getProperty(0)).getProperty(0).toString()));
-                        c_bpartner.setName(((SoapObject) ((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(1)).getProperty(0).toString());
-                        if (((SoapObject)((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(2)).getProperty(0) != null) {
-                            c_bpartner.setC_Uom_ID(Long.parseLong(((SoapObject) ((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(2)).getProperty(0).toString()));
-                        }
-                        if (((SoapObject) ((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(3)).getProperty(0) != null) {
-                            c_bpartner.setM_Product_Category_ID(Long.parseLong(((SoapObject) ((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(3)).getProperty(0).toString()));
-                        }
+                        ad_user_roles.setAD_Role_ID(Long.parseLong(((SoapObject) ((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(0)).getProperty(0).toString()));
+                        ad_user_roles.setAD_User_ID(Long.parseLong(((SoapObject) ((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(1)).getProperty(0).toString()));
 
-                        if (((SoapObject)((SoapObject)((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(4)).getProperty(0) != null) {
-                            c_bpartner.setM_Locator_ID(Long.parseLong(((SoapObject) ((SoapObject) ((SoapObject) soap.getProperty(0)).getProperty(i)).getProperty(4)).getProperty(0).toString()));
-                        }
-
-                        M_ProductDBAdapter db = new M_ProductDBAdapter(ApplicationContext.getAppContext());
-                        if (db.getM_Product(c_bpartner.getM_Product_ID()) == null)
+                        if (db.getAD_User_Roles(ad_user_roles.getAD_User_ID()) == null)
                         {
-                            db.createM_Product(c_bpartner);
+                            db.createAD_User_Roles(ad_user_roles);
                         }
                         else
                         {
-                            db.updateM_Product(c_bpartner);
+                            db.updateAD_User_Roles(ad_user_roles);
                         }
                     }
                     return true;
