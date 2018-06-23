@@ -22,7 +22,7 @@ public class M_Locator implements Serializable {
     }
 
     public M_Locator(int m_locator_id, int m_warehouse_id, String x_aisle, String y_bin, String z_level) {
-        this._m_locator_id = m_warehouse_id;
+        this._m_locator_id = m_locator_id;
         this._m_warehouse_id = m_warehouse_id;
         this._x_aisle = x_aisle;
         this._y_bin = y_bin;
