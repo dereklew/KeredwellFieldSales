@@ -193,21 +193,15 @@ public class C_Order implements Serializable {
 
     public void setProcessOrder_Retval(String processOrder_Retval) { this._processOrder_Retval = processOrder_Retval; }
 
-    public String getProcessOrder_Retval() {
-        return this._processOrder_Retval;
-    }
+    public String getProcessOrder_Retval() { return this._processOrder_Retval; }
 
     public void setSyncDateProcessOrder(Date syncdateProcessOrder) { this._syncdateProcessOrder = syncdateProcessOrder; }
 
-    public Date getSyncDateProcessOrder() {
-        return this._syncdateProcessOrder;
-    }
+    public Date getSyncDateProcessOrder() { return this._syncdateProcessOrder; }
 
     public void setM_InOut_ID(long m_inout_id) { this._m_inout_id = m_inout_id; }
 
-    public long getM_InOut_ID() {
-        return this._m_inout_id;
-    }
+    public long getM_InOut_ID() { return this._m_inout_id; }
 
     public void setC_Invoice_ID(long c_invoice_id) { this._c_invoice_id = c_invoice_id; }
 
