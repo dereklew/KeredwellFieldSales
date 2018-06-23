@@ -18,10 +18,6 @@ import java.util.List;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 24/8/2017.
- */
-
 public class TaxSpinnerFragment extends Fragment {
     private static final String TAG = makeLogTag(TaxSpinnerFragment.class);
 
@@ -49,7 +45,6 @@ public class TaxSpinnerFragment extends Fragment {
     }
 
     public void addListenerOnSpinnerItemSelection() {
-        // Spinner element
         Spinner spinnerTax = (Spinner) getView().getRootView().findViewById(R.id.spinnerTax);
 
         spinnerTax.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -63,26 +58,18 @@ public class TaxSpinnerFragment extends Fragment {
         });
     }
 
-    /**
-     * Function to load the spinner data from SQLite database
-     * */
     private void loadSpinnerData() {
         C_TaxDBAdapter tdb = new C_TaxDBAdapter(getActivity());
         taxes = tdb.getAllTaxesName();
         taxs = tdb.getAllTaxes();
 
-        // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(),
                 R.layout.simple_spinner_item, taxes);
 
-        // Drop down layout style - list view with radio button
-        dataAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // Spinner element
         Spinner spinnerTax = (Spinner) getView().getRootView().findViewById(R.id.spinnerTax);
 
-        // attaching data adapter to spinner
         spinnerTax.setAdapter(dataAdapter);
     }
 }
