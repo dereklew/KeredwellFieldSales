@@ -6,10 +6,6 @@ import com.keredwell.fieldsales.ApplicationContext;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 25/12/2017.
- */
-
 public class SharedPrefUtil {
     private static final String TAG = makeLogTag(SharedPrefUtil.class);
 

@@ -11,11 +11,6 @@ import com.keredwell.fieldsales.util.LogUtil;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * The base class for all fragment classes.
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class BaseFragment extends Fragment {
     private static final String TAG = LogUtil.makeLogTag(BaseFragment.class);
 

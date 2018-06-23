@@ -33,22 +33,11 @@ import java.util.ArrayList;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Lists all available quotes. This Activity supports a single pane (= smartphones) and a two pane mode (= large screens with >= 600dp width).
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class OrderDetailActivity extends BaseActivity implements OrderDetailFragment.Callback {
     private static final String TAG = makeLogTag(OrderDetailActivity.class);
 
-    /**
-     * Whether or not the activity is running on a device with a large screen
-     */
     private boolean twoPaneMode;
 
-    /**
-     * Keep track of the order sync task to ensure we can cancel it if requested.
-     */
     private OrderPrintTask mOrderPrintTask = null;
     private View mProgressView;
     private View mOrderFormView;
@@ -82,15 +71,6 @@ public class OrderDetailActivity extends BaseActivity implements OrderDetailFrag
 
         updateTotalView();
 
-        if (isTwoPaneLayoutUsed()) {
-            twoPaneMode = true;
-            enableActiveItemState();
-        }
-
-        if (savedInstanceState == null && twoPaneMode) {
-            //setupDetailFragment();
-        }
-
         mOrderFormView = findViewById(R.id.order_main);
         mProgressView = findViewById(R.id.order_progress);
     }
@@ -103,11 +83,6 @@ public class OrderDetailActivity extends BaseActivity implements OrderDetailFrag
         c_bPartner = bPartnerDBAdapter.getC_BPartner(mItem.get(position).getC_BPartner_ID());
     }
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
     private void attemptPrint() {
         if (mOrderPrintTask != null) {
             return;
@@ -117,12 +92,8 @@ public class OrderDetailActivity extends BaseActivity implements OrderDetailFrag
         View focusView = null;
 
         if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
             showProgress(true);
             mOrderPrintTask = new OrderPrintTask();
             mOrderPrintTask.execute((Void) null);
@@ -134,9 +105,6 @@ public class OrderDetailActivity extends BaseActivity implements OrderDetailFrag
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
@@ -158,8 +126,6 @@ public class OrderDetailActivity extends BaseActivity implements OrderDetailFrag
                 }
             });
         } else {
-            // The ViewPropertyAnimator APIs are not available, so simply show
-            // and hide the relevant UI components.
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
             mOrderFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }

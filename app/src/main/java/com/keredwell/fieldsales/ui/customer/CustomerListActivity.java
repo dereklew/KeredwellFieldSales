@@ -25,17 +25,9 @@ import java.util.List;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Lists all available quotes. This Activity supports a single pane (= smartphones) and a two pane mode (= large screens with >= 600dp width).
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class CustomerListActivity extends BaseActivity implements CustomerListFragment.Callback {
     private static final String TAG = makeLogTag(CustomerListActivity.class);
 
-    /**
-     * Whether or not the activity is running on a device with a large screen
-     */
     private boolean twoPaneMode;
 
     private List<String> customerGroups = new ArrayList<>();
@@ -77,7 +69,6 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
             else
                 c_bp_group = c_bp_groupDBAdapter.getC_BP_Group(cg);
 
-            // Spinner Drop down elements
             customers = c_bPartnerDBAdapter.getAllC_BPartnersByGroupID(c_bp_group.getC_BP_Group_ID());
 
             if (mode == 1) {
@@ -119,8 +110,6 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
     public void onItemSelected(int id) {
         C_BPartner customer = customers.get(id);
         if (twoPaneMode) {
-            // Show the detail information by replacing the DetailFragment via transaction.
-
             Bundle arguments = new Bundle();
             arguments.putLong(CustomerDetailFragment.ARG_ITEM_ID, customer.getC_BPartner_ID());
             arguments.putString(CustomerDetailFragment.ARG_ITEM_NAME, customer.getName());
@@ -131,8 +120,6 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
             CustomerDetailFragment fragment = CustomerDetailFragment.newInstance(arguments);
             getFragmentManager().beginTransaction().replace(R.id.article_detail_container, fragment).commit();
         } else {
-            // Start the detail activity in single pane mode.
-
             Bundle arguments = new Bundle();
             arguments.putLong(CustomerDetailFragment.ARG_ITEM_ID, customer.getC_BPartner_ID());
             arguments.putString(CustomerDetailFragment.ARG_ITEM_NAME, customer.getName());
@@ -194,7 +181,6 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
         getMenuInflater().inflate(R.menu.search_actions, menu);
 
         MenuItem searchViewItem = menu.findItem(R.id.action_search);
-        // Get the SearchView and set the searchable configuration
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) searchViewItem.getActionView();
         searchView.setQueryHint("Search for customers...");
@@ -203,8 +189,6 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
 
         SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
             public boolean onQueryTextChange(String query) {
-                // This is your adapter that will be filtered
-                //Toast.makeText(getApplicationContext(),"textChanged :"+newText,Toast.LENGTH_LONG).show();
                 if (TextUtils.isEmpty(query)) {
                     C_BP_Group c_bp_group;
                     c_bp_group = c_bp_groupDBAdapter.getC_BP_Group(customerGroups.get(0));
@@ -215,15 +199,12 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
                 }
                 Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
                 if (f instanceof CustomerListFragment)
-                    // do something with f
                     ((CustomerListFragment) f).refreshData();
 
                 return true;
             }
 
             public boolean onQueryTextSubmit(String query) {
-                // **Here you can get the value "query" which is entered in the search box.**
-
                 if (TextUtils.isEmpty(query)) {
                     C_BP_Group c_bp_group;
                     c_bp_group = c_bp_groupDBAdapter.getC_BP_Group(customerGroups.get(0));
@@ -234,7 +215,6 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
                 }
                 Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
                 if (f instanceof CustomerListFragment)
-                        // do something with f
                     ((CustomerListFragment) f).refreshData();
 
                 return true;

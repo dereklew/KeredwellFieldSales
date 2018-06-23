@@ -10,10 +10,6 @@ import java.util.Properties;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 29/10/2017.
- */
-
 public class PropUtil {
     private static final String TAG = makeLogTag(PropUtil.class);
 

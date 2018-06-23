@@ -26,24 +26,13 @@ import java.math.BigDecimal;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Shows the quote detail page.
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class ProductDetailFragment extends BaseFragment {
     private static final String TAG = makeLogTag(ProductDetailFragment.class);
 
-    /**
-     * The argument represents the data of this fragment.
-     */
     public static final String ARG_ITEM_ID = "item_id";
     public static final String ARG_ITEM_NAME = "item_name";
     public static final String ARG_ITEM_UNIT_PRICE = "item_unit_price";
 
-    /**
-     * The content of this fragment.
-     */
     private M_Product mItem;
 
     @Bind(R.id.productname)
@@ -67,9 +56,6 @@ public class ProductDetailFragment extends BaseFragment {
         mItem = new M_Product();
 
         if (arguments != null) {
-            // Load the dummy content specified by the fragment
-            // arguments. In a real-world scenario, use a Loader
-            // to load content from a content provider.
             mItem.setM_Product_ID(arguments.getInt(ARG_ITEM_ID));
             mItem.setName(arguments.getString(ARG_ITEM_NAME));
             mItem.setPriceStd(arguments.getInt(ARG_ITEM_UNIT_PRICE));
@@ -83,7 +69,6 @@ public class ProductDetailFragment extends BaseFragment {
         View rootView = inflateAndBind(inflater, container, R.layout.fragment_product_detail);
 
         if (!((BaseActivity) getActivity()).providesActivityToolbar()) {
-            // No Toolbar present. Set include_toolbar:
             ((BaseActivity) getActivity()).setToolbar((Toolbar) rootView.findViewById(R.id.toolbar));
         }
 
@@ -111,7 +96,6 @@ public class ProductDetailFragment extends BaseFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // your logic
                 return true;
         }
         return super.onOptionsItemSelected(item);

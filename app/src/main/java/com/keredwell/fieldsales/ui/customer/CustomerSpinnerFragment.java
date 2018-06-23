@@ -16,10 +16,6 @@ import java.util.List;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 24/8/2017.
- */
-
 public class CustomerSpinnerFragment extends Fragment {
     private static final String TAG = makeLogTag(CustomerSpinnerFragment.class);
 
@@ -60,24 +56,17 @@ public class CustomerSpinnerFragment extends Fragment {
         });
     }
 
-    /**
-     * Function to load the spinner data from SQLite database
-     * */
     private void loadSpinnerData() {
         customergroups = ((CustomerListActivity)getActivity()).getListCustomerGroups();
 
-        // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_spinner_item, customergroups);
 
-        // Drop down layout style - list view with radio button
         dataAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // Spinner element
         Spinner spinnerCustomerGroup = (Spinner) getView().getRootView().findViewById(R.id.spinnerCustomerGroup);
 
-        // attaching data adapter to spinner
         spinnerCustomerGroup.setAdapter(dataAdapter);
     }
 

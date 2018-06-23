@@ -7,10 +7,6 @@ import android.support.v13.app.FragmentPagerAdapter;
 import com.keredwell.fieldsales.ApplicationContext;
 import com.keredwell.fieldsales.R;
 
-/**
- * Created by Derek on 11/1/2018.
- */
-
 public class OrderListPageAdapter extends FragmentPagerAdapter {
 
     public static final int FRAG_INCOMPLETE = 0;

@@ -25,25 +25,15 @@ import com.keredwell.fieldsales.util.LogUtil;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Shows the quote detail page.
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class CustomerDetailFragment extends BaseFragment {
     private static final String TAG = makeLogTag(CustomerDetailFragment.class);
-    /**
-     * The argument represents the data of this fragment.
-     */
+
     public static final String ARG_ITEM_ID = "item_id";
     public static final String ARG_ITEM_NAME = "item_name";
     public static final String ARG_ITEM_ADDRESS = "item_address";
     public static final String ARG_ITEM_POSTAL = "item_postal";
     public static final String ARG_ITEM_TEL = "item_tel";
 
-    /**
-     * The dummy content of this fragment.
-     */
     private C_BPartner mItem;
 
     @Bind(R.id.customername)
@@ -74,9 +64,6 @@ public class CustomerDetailFragment extends BaseFragment {
             mItem = new C_BPartner();
 
             if (arguments != null) {
-                // Load the dummy content specified by the fragment
-                // arguments. In a real-world scenario, use a Loader
-                // to load content from a content provider.
                 mItem.setC_BPartner_ID(arguments.getInt(ARG_ITEM_ID));
                 mItem.setName(arguments.getString(ARG_ITEM_NAME));
                 mItem.setAddress(arguments.getString(ARG_ITEM_ADDRESS));
@@ -95,7 +82,6 @@ public class CustomerDetailFragment extends BaseFragment {
         View rootView = inflateAndBind(inflater, container, R.layout.fragment_customer_detail);
 
         if (!((BaseActivity) getActivity()).providesActivityToolbar()) {
-            // No Toolbar present. Set include_toolbar:
             ((BaseActivity) getActivity()).setToolbar((Toolbar) rootView.findViewById(R.id.toolbar));
         }
 
@@ -125,7 +111,6 @@ public class CustomerDetailFragment extends BaseFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // your logic
                 return true;
         }
         return super.onOptionsItemSelected(item);

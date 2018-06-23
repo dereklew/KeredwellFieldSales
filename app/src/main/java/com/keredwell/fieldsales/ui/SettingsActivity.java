@@ -31,6 +31,8 @@ public class SettingsActivity extends BaseActivity {
     private EditText roleIdEdit;
     private EditText orgIdEdit;
     private EditText warehouseIdEdit;
+    private EditText adUserServiceTypeEdit;
+    private EditText adUserRolesServiceTypeEdit;
     private EditText userServiceTypeEdit;
     private EditText bpartnerServiceTypeEdit;
     private EditText bpartnerLocationServiceTypeEdit;
@@ -82,6 +84,12 @@ public class SettingsActivity extends BaseActivity {
 
         warehouseIdEdit = (EditText) findViewById(R.id.warehouseId);
         warehouseIdEdit.setText(prop.getProperty("warehouseId"), EditText.BufferType.EDITABLE);
+
+        adUserServiceTypeEdit = (EditText) findViewById(R.id.adUserServiceType);
+        adUserServiceTypeEdit.setText(prop.getProperty("adUserServiceType"), EditText.BufferType.EDITABLE);
+
+        adUserRolesServiceTypeEdit = (EditText) findViewById(R.id.adUserRolesServiceType);
+        adUserRolesServiceTypeEdit.setText(prop.getProperty("adUserRolesServiceType"), EditText.BufferType.EDITABLE);
 
         userServiceTypeEdit = (EditText) findViewById(R.id.userServiceType);
         userServiceTypeEdit.setText(prop.getProperty("userServiceType"), EditText.BufferType.EDITABLE);
@@ -181,6 +189,14 @@ public class SettingsActivity extends BaseActivity {
                 if (warehouseId == "")
                     return;
 
+                String adUserServiceType = adUserServiceTypeEdit.getText().toString();
+                if (adUserServiceType == "")
+                    return;
+
+                String adUserRolesServiceType = adUserRolesServiceTypeEdit.getText().toString();
+                if (adUserRolesServiceType == "")
+                    return;
+
                 String userServiceType = userServiceTypeEdit.getText().toString();
                 if (userServiceType == "")
                     return;
@@ -278,6 +294,8 @@ public class SettingsActivity extends BaseActivity {
                 prop.setProperty("roleId", roleId);
                 prop.setProperty("orgId", orgId);
                 prop.setProperty("warehouseId", warehouseId);
+                prop.setProperty("adUserServiceType", adUserServiceType);
+                prop.setProperty("adUserRolesServiceType", adUserRolesServiceType);
                 prop.setProperty("userServiceType", userServiceType);
                 prop.setProperty("bpartnerServiceType", bpartnerServiceType);
                 prop.setProperty("bpartnerLocationServiceType", bpartnerLocationServiceType);

@@ -21,11 +21,6 @@ import java.util.ArrayList;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Shows a list of all available quotes.
- * <p/>
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class ProductListFragment extends ListFragment {
     private static final String TAG = makeLogTag(ProductListFragment.class);
 
@@ -33,16 +28,10 @@ public class ProductListFragment extends ListFragment {
 
     private ArrayList<M_Product> mItem = new ArrayList<>();
 
-    /**
-     * A callback interface. Called whenever a item has been selected.
-     */
     public interface Callback {
         void onItemSelected(int id);
     }
 
-    /**
-     * A dummy no-op implementation of the Callback interface. Only used when no active Activity is present.
-     */
     private static final Callback productCallback = new Callback() {
         @Override
         public void onItemSelected(int id) {
@@ -67,7 +56,6 @@ public class ProductListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        // notify callback about the selected list item
         callback.onItemSelected(position);
     }
 

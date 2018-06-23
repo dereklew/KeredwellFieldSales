@@ -8,10 +8,6 @@ import java.util.Date;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 19/8/2017.
- */
-
 public class DateUtil {
     private static final String TAG = makeLogTag(DateUtil.class);
 

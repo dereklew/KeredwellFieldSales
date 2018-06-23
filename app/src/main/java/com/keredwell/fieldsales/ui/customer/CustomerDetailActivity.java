@@ -8,11 +8,6 @@ import com.keredwell.fieldsales.util.LogUtil;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Simple wrapper for {@link CustomerDetailFragment}
- * This wrapper is only used in single pan mode (= on smartphones)
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class CustomerDetailActivity extends BaseActivity {
     private static final String TAG = makeLogTag(CustomerDetailActivity.class);
 
@@ -22,7 +17,6 @@ public class CustomerDetailActivity extends BaseActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_customers_detail);
 
-            // Show the Up button in the action bar.
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }

@@ -2,10 +2,6 @@ package com.keredwell.fieldsales.util;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 21/12/2017.
- */
-
 public class PaddingUtil {
     private static final String TAG = makeLogTag(PaddingUtil.class);
 

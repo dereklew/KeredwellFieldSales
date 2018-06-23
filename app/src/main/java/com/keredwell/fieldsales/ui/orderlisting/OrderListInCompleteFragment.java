@@ -29,11 +29,6 @@ import java.util.ArrayList;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Shows a list of all available quotes.
- * <p/>
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class OrderListInCompleteFragment extends ListFragment {
     private static final String TAG = makeLogTag(OrderListInCompleteFragment.class);
 

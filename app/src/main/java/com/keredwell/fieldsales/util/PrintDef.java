@@ -1,9 +1,5 @@
 package com.keredwell.fieldsales.util;
 
-/**
- * Created by Derek on 20/12/2017.
- */
-
 public class PrintDef {
 
     /**

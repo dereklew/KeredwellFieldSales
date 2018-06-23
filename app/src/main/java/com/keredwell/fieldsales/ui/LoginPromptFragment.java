@@ -38,12 +38,8 @@ public class LoginPromptFragment extends BaseFragment {
 
     private static final String TAG = makeLogTag(LoginPromptFragment.class);
 
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
     private UserLoginTask mAuthTask = null;
 
-    // UI references.
     private EditText mUserView;
     private EditText mPasswordView;
     private View mProgressView;
@@ -71,10 +67,7 @@ public class LoginPromptFragment extends BaseFragment {
                     attemptLogin();
                 }
             });
-
-            // Set up the login form.
             mUserView = (EditText) view.findViewById(R.id.user);
-            //populateAutoComplete();
 
             mPasswordView = (EditText) view.findViewById(R.id.password);
             mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -93,7 +86,6 @@ public class LoginPromptFragment extends BaseFragment {
 
                 @Override
                 public void onClick(View v) {
-                    // Is the view now checked?
                     boolean checked = ((CheckBox) v).isChecked();
                     if (checked)
                         mPasswordView.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -108,35 +100,25 @@ public class LoginPromptFragment extends BaseFragment {
         }
     }
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
     private void attemptLogin() {
         if (mAuthTask != null) {
             return;
         }
-
-        // Reset errors.
         mUserView.setError(null);
         mPasswordView.setError(null);
 
-        // Store values at the time of the login attempt.
         String user = mUserView.getText().toString();
         String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
-        // Check for a valid password, if the user entered one.
         if (TextUtils.isEmpty(password)) {
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
             cancel = true;
         }
 
-        // Check for a valid email address.
         if (TextUtils.isEmpty(user)) {
             mUserView.setError(getString(R.string.error_field_required));
             focusView = mUserView;
@@ -144,26 +126,16 @@ public class LoginPromptFragment extends BaseFragment {
         }
 
         if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
             showProgress(true);
             mAuthTask = new UserLoginTask(user, password);
             mAuthTask.execute((Void) null);
         }
     }
 
-    /**
-     * Shows the progress UI and hides the login form.
-     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
@@ -194,18 +166,12 @@ public class LoginPromptFragment extends BaseFragment {
                 }
             });
         } else {
-            // The ViewPropertyAnimator APIs are not available, so simply show
-            // and hide the relevant UI components.
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
             mFabView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
 
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mUser;
@@ -218,13 +184,6 @@ public class LoginPromptFragment extends BaseFragment {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // database handler
-            //InitDB db = new InitDB(LoginActivity.this);
-            //db.SetData();
-
-            //UserDBAdapter udb = new UserDBAdapter(LoginActivity.this);
-            //return udb.checkLogin(mUser, mPassword);
-
             try{
                 User user = UserWS.UserWSEvent(mUser, mPassword);
                 if (user != null)

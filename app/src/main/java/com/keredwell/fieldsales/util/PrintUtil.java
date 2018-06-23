@@ -20,10 +20,6 @@ import java.util.List;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 21/12/2017.
- */
-
 public class PrintUtil {
     private static final String TAG = makeLogTag(PrintUtil.class);
 

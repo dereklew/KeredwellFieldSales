@@ -18,12 +18,14 @@ import android.view.View;
 
 import com.keredwell.fieldsales.ApplicationContext;
 import com.keredwell.fieldsales.R;
+import com.keredwell.fieldsales.data.AD_User_Roles;
 import com.keredwell.fieldsales.util.DateUtil;
 import com.keredwell.fieldsales.ui.base.BaseActivity;
 import com.keredwell.fieldsales.ui.order.OrderListActivity;
 import com.keredwell.fieldsales.util.LogUtil;
 import com.keredwell.fieldsales.util.PropUtil;
 import com.keredwell.fieldsales.util.SharedPrefUtil;
+import com.keredwell.fieldsales.webservice.AD_User_RolesWS;
 import com.keredwell.fieldsales.webservice.C_BP_GroupWS;
 import com.keredwell.fieldsales.webservice.C_BPartnerWS;
 import com.keredwell.fieldsales.webservice.C_BPartner_LocationWS;
@@ -42,17 +44,9 @@ import java.util.Date;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * This Activity provides several settings. Activity contains {@link PreferenceFragment} as inner class.
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class SynchronizationActivity extends BaseActivity {
     private static final String TAG = makeLogTag(SynchronizationActivity.class);
 
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
     private SyncTask mSyncTask = null;
 
     private View mProgressView;
@@ -78,31 +72,18 @@ public class SynchronizationActivity extends BaseActivity {
         mFabView = findViewById(R.id.sync_fab);
     }
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
     private void attemptSync() {
         if (mSyncTask != null) {
             return;
         }
-
-        // Show a progress spinner, and kick off a background task to
-        // perform the synchronization attempt.
         showProgress(true);
         mSyncTask = new SynchronizationActivity.SyncTask();
         mSyncTask.execute((Void) null);
     }
 
-    /**
-     * Shows the progress UI and hides the login form.
-     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
@@ -133,18 +114,12 @@ public class SynchronizationActivity extends BaseActivity {
                 }
             });
         } else {
-            // The ViewPropertyAnimator APIs are not available, so simply show
-            // and hide the relevant UI components.
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
             mSyncFormView.setVisibility(show ? View.GONE : View.VISIBLE);
             mFabView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
 
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
     public class SyncTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
@@ -156,6 +131,9 @@ public class SynchronizationActivity extends BaseActivity {
                 String mUserID = SharedPrefUtil.getPersistedData(ApplicationContext.USERID, null);
 
                 Date lastUpdatedDate = DateUtil.ConvertToDate(PropUtil.getProperty("lastUpdatedatetime"));
+                if (AD_User_RolesWS.WSEvent(mUser, mPassword, lastUpdatedDate) == false)
+                    return false;
+
                 if (C_BP_GroupWS.WSEvent(mUser, mPassword, lastUpdatedDate) == false)
                     return false;
 
