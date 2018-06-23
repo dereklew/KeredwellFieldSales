@@ -20,14 +20,6 @@ import com.keredwell.fieldsales.util.SharedPrefUtil;
 import static com.keredwell.fieldsales.util.LogUtil.logD;
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-
-/**
- * The base class for all Activity classes.
- * This class creates and provides the navigation drawer and toolbar.
- * The navigation logic is handled in {@link BaseActivity#goToNavDrawerItem(int)}
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public abstract class BaseActivity extends AppCompatActivity {
     private static final String TAG = makeLogTag(BaseActivity.class);
 
@@ -145,7 +137,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return getSupportActionBar();
     }
-
 
     /**
      * Returns the navigation drawer item that corresponds to this Activity. Subclasses
