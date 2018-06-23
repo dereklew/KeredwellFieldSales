@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout
+        android:id="@+id/setting_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/setting_fab"
+        android:orientation="vertical"
+        android:padding="@dimen/narrow_offset">
+
+        <TextView
+            android:id="@+id/setting_serverUri"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_serverUri" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/setting_prompt_serverUri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/serverUri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_serverUri"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/setting_nameSpace"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_nameSpace" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/nameSpace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_nameSpace"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/setting_lang"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_lang" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/lang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_lang"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/setting_clientId"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_clientId" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/clientId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_clientId"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/setting_roleId"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_roleId" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/roleId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_roleId"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/setting_orgId"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_orgId" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/orgId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_orgId"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/setting_warehouseId"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_warehouseId" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/warehouseId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_warehouseId"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/setting_fab"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_alignParentBottom="true"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/regular_offset"
+            android:src="@drawable/ic_done" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>
