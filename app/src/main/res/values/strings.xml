@@ -44,6 +44,8 @@
     <string name="setting_roleId">Role ID</string>
     <string name="setting_orgId">Org ID</string>
     <string name="setting_warehouseId">Warehouse ID</string>
+    <string name="setting_adUserServiceType">AD User Service Type</string>
+    <string name="setting_adUserRolesServiceType">AD User Roles Service Type</string>
     <string name="setting_userServiceType">User Service Type</string>
     <string name="setting_bpartnerServiceType">B Partner Service Type</string>
     <string name="setting_bpartnerLocationServiceType">B Partner Location Service Type</string>
