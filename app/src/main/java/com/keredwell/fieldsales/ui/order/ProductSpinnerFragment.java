@@ -16,10 +16,6 @@ import java.util.List;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 24/8/2017.
- */
-
 public class ProductSpinnerFragment extends Fragment {
     private static final String TAG = makeLogTag(ProductSpinnerFragment.class);
 
@@ -46,7 +42,6 @@ public class ProductSpinnerFragment extends Fragment {
     }
 
     public void addListenerOnSpinnerItemSelection() {
-        // Spinner element
         Spinner spinnerProductCategory = (Spinner) getView().getRootView().findViewById(R.id.spinnerProductCategory);
 
         spinnerProductCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -60,24 +55,16 @@ public class ProductSpinnerFragment extends Fragment {
         });
     }
 
-    /**
-     * Function to load the spinner data from SQLite database
-     * */
     private void loadSpinnerData() {
         productcateories = ((ProductListActivity)getActivity()).getListProductCategories();
 
-        // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_spinner_item, productcateories);
 
-        // Drop down layout style - list view with radio button
-        dataAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // Spinner element
         Spinner spinnerProductCategory = (Spinner) getView().getRootView().findViewById(R.id.spinnerProductCategory);
 
-        // attaching data adapter to spinner
         spinnerProductCategory.setAdapter(dataAdapter);
     }
 

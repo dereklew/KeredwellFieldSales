@@ -10,16 +10,11 @@ import com.keredwell.fieldsales.R;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 4/9/2017.
- */
-
 public class CashOrCreditDialogFragment extends DialogFragment {
     private static final String TAG = makeLogTag(CashOrCreditDialogFragment.class);
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.payment_term);
         builder.setMessage(R.string.cash_or_credit_message)
@@ -37,7 +32,6 @@ public class CashOrCreditDialogFragment extends DialogFragment {
                     dialog.dismiss();
                 }
             });
-        // Create the AlertDialog object and return it
         return builder.create();
     }
 }

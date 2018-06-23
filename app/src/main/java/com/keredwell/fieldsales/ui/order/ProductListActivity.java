@@ -25,17 +25,8 @@ import java.util.List;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Lists all available quotes. This Activity supports a single pane (= smartphones) and a two pane mode (= large screens with >= 600dp width).
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class ProductListActivity extends BaseActivity implements ProductListFragment.Callback {
     private static final String TAG = makeLogTag(ProductListActivity.class);
-
-    /**
-     * Whether or not the activity is running on a device with a large screen
-     */
 
     private List<String> productCategories = new ArrayList<>();
     private ArrayList<M_Product> products = new ArrayList<>();;
@@ -68,8 +59,6 @@ public class ProductListActivity extends BaseActivity implements ProductListFrag
         else
             productcategory = m_product_categoryDBAdapter.getM_Product_Category(cg);
 
-        // Spinner Drop down elements
-
         products = m_productDBAdapter.getAllProductsByCategoryId(productcategory.getM_Product_Category_ID());
 
         removeDuplicate();
@@ -77,7 +66,6 @@ public class ProductListActivity extends BaseActivity implements ProductListFrag
         if (mode == 1) {
             Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
             if (f instanceof ProductListFragment)
-                // do something with f
                 ((ProductListFragment) f).refreshData();
         }
     }
@@ -137,7 +125,6 @@ public class ProductListActivity extends BaseActivity implements ProductListFrag
         getMenuInflater().inflate(R.menu.search_actions, menu);
 
         MenuItem searchViewItem = menu.findItem(R.id.action_search);
-        // Get the SearchView and set the searchable configuration
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) searchViewItem.getActionView();
         searchView.setQueryHint("Search for products...");
@@ -146,8 +133,6 @@ public class ProductListActivity extends BaseActivity implements ProductListFrag
 
         SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
             public boolean onQueryTextChange(String query) {
-                // This is your adapter that will be filtered
-                //Toast.makeText(getApplicationContext(),"textChanged :"+newText,Toast.LENGTH_LONG).show();
                 if (TextUtils.isEmpty(query)) {
                     M_Product_Category productCategory;
                     productCategory = m_product_categoryDBAdapter.getM_Product_Category(productCategories.get(0));
@@ -160,15 +145,12 @@ public class ProductListActivity extends BaseActivity implements ProductListFrag
 
                 Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
                 if (f instanceof ProductListFragment)
-                    // do something with f
                     ((ProductListFragment) f).refreshData();
 
                 return true;
             }
 
             public boolean onQueryTextSubmit(String query) {
-                // **Here you can get the value "query" which is entered in the search box.**
-
                 if (TextUtils.isEmpty(query)) {
                     M_Product_Category productCategory;
                     productCategory = m_product_categoryDBAdapter.getM_Product_Category(productCategories.get(0));
@@ -181,7 +163,6 @@ public class ProductListActivity extends BaseActivity implements ProductListFrag
 
                 Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
                 if (f instanceof ProductListFragment)
-                    // do something with f
                     ((ProductListFragment) f).refreshData();
 
                 return true;

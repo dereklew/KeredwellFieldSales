@@ -11,16 +11,11 @@ import com.keredwell.fieldsales.R;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Created by Derek on 4/9/2017.
- */
-
 public class PrintDialogFragment extends DialogFragment {
     private static final String TAG = makeLogTag(PrintDialogFragment.class);
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(ApplicationContext.getAppContext().getString(R.string.synchronization_title));
         builder.setMessage(ApplicationContext.getAppContext().getString(R.string.succeeded) + ApplicationContext.getAppContext().getString(R.string.wanttoprint))
@@ -38,7 +33,6 @@ public class PrintDialogFragment extends DialogFragment {
                     dialog.dismiss();
                 }
             });
-        // Create the AlertDialog object and return it
         return builder.create();
     }
 }

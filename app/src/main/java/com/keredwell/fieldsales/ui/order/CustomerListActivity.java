@@ -25,17 +25,8 @@ import java.util.List;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Lists all available quotes. This Activity supports a single pane (= smartphones) and a two pane mode (= large screens with >= 600dp width).
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class CustomerListActivity extends BaseActivity implements CustomerListFragment.Callback {
     private static final String TAG = makeLogTag(CustomerListActivity.class);
-    /**
-     * Whether or not the activity is running on a device with a large screen
-     */
-    private boolean twoPaneMode;
 
     private List<String> customerGroups = new ArrayList<>();
     private ArrayList<C_BPartner> customers = new ArrayList<>();
@@ -65,13 +56,11 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
         else
             customerGroup = c_bp_groupDBAdapter.getC_BP_Group(cg);
 
-        // Spinner Drop down elements
         customers = c_bPartnerDBAdapter.getAllC_BPartnersByGroupID(customerGroup.getC_BP_Group_ID());
 
         if (mode == 1) {
             Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
             if (f instanceof CustomerListFragment)
-                // do something with f
                 ((CustomerListFragment) f).refreshData();
         }
     }
@@ -133,31 +122,19 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
         fragmentById.getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     }
 
-    /**
-     * Is the container present? If so, we are using the two-pane layout.
-     *
-     * @return true if the two pane layout is used.
-     */
-    private boolean isTwoPaneLayoutUsed() {
-        return findViewById(R.id.article_detail_container) != null;
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_actions, menu);
 
         MenuItem searchViewItem = menu.findItem(R.id.action_search);
-        // Get the SearchView and set the searchable configuration
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) searchViewItem.getActionView();
         searchView.setQueryHint("Search for customers...");
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconifiedByDefault(false);// Do not iconify the widget; expand it by default
+        searchView.setIconifiedByDefault(false);
 
         SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
             public boolean onQueryTextChange(String query) {
-                // This is your adapter that will be filtered
-                //Toast.makeText(getApplicationContext(),"textChanged :"+newText,Toast.LENGTH_LONG).show();
                 if (TextUtils.isEmpty(query)) {
                     C_BP_Group c_bp_group;
                     c_bp_group = c_bp_groupDBAdapter.getC_BP_Group(customerGroups.get(0));
@@ -168,15 +145,12 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
                 }
                 Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
                 if (f instanceof CustomerListFragment)
-                    // do something with f
                     ((CustomerListFragment) f).refreshData();
 
                 return true;
             }
 
             public boolean onQueryTextSubmit(String query) {
-                // **Here you can get the value "query" which is entered in the search box.**
-
                 if (TextUtils.isEmpty(query)) {
                     C_BP_Group c_bp_group;
                     c_bp_group = c_bp_groupDBAdapter.getC_BP_Group(customerGroups.get(0));
@@ -187,7 +161,6 @@ public class CustomerListActivity extends BaseActivity implements CustomerListFr
                 }
                 Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
                 if (f instanceof CustomerListFragment)
-                    // do something with f
                     ((CustomerListFragment) f).refreshData();
 
                 return true;

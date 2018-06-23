@@ -14,11 +14,14 @@ import android.widget.TextView;
 
 import com.keredwell.fieldsales.ApplicationContext;
 import com.keredwell.fieldsales.R;
+import com.keredwell.fieldsales.data.AD_User;
 import com.keredwell.fieldsales.data.C_BPartner;
 import com.keredwell.fieldsales.data.C_Tax;
 import com.keredwell.fieldsales.data.M_Product;
 import com.keredwell.fieldsales.data.C_Order;
 import com.keredwell.fieldsales.data.C_OrderLine;
+import com.keredwell.fieldsales.dbhelper.AD_UserDBAdapter;
+import com.keredwell.fieldsales.dbhelper.AD_User_RolesDBAdapter;
 import com.keredwell.fieldsales.dbhelper.M_LocatorDBAdapter;
 import com.keredwell.fieldsales.ui.base.BaseActivity;
 import com.keredwell.fieldsales.util.PropUtil;
@@ -31,32 +34,25 @@ import java.util.Iterator;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Lists all available quotes. This Activity supports a single pane (= smartphones) and a two pane mode (= large screens with >= 600dp width).
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class OrderListActivity extends BaseActivity implements OrderListFragment.Callback {
     private static final String TAG = makeLogTag(OrderListActivity.class);
-
-    /**
-     * Whether or not the activity is running on a device with a large screen
-     */
-    private boolean twoPaneMode;
 
     private C_Order c_order = new C_Order();
     private ArrayList<C_OrderLine> c_orderLines = new ArrayList<>();
     private C_Tax c_tax = new C_Tax();
     private C_BPartner c_bPartner = new C_BPartner();
+    private AD_User ad_user = new AD_User();
     private boolean isCash;
 
     private M_LocatorDBAdapter m_locatorDBAdapter;
+    private AD_User_RolesDBAdapter ad_user_rolesDBAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         m_locatorDBAdapter = new M_LocatorDBAdapter(this);
+        ad_user_rolesDBAdapter = new AD_User_RolesDBAdapter(this);
 
         if (getIntent().getSerializableExtra("c_order") != null) {
             c_order = (C_Order) getIntent().getSerializableExtra("c_order");
@@ -75,18 +71,9 @@ public class OrderListActivity extends BaseActivity implements OrderListFragment
             public void onClick(View view) {
                 Intent intent = new Intent(OrderListActivity.this, ProductListActivity.class);
                 intent.putExtra("orderitem", c_orderLines);
-                startActivityForResult(intent, 1); //ex: requestCode = 1
+                startActivityForResult(intent, 1);
             }
         });
-
-        if (isTwoPaneLayoutUsed()) {
-            twoPaneMode = true;
-            enableActiveItemState();
-        }
-
-        if (savedInstanceState == null && twoPaneMode) {
-            //setupDetailFragment();
-        }
     }
 
     @Override
@@ -123,7 +110,6 @@ public class OrderListActivity extends BaseActivity implements OrderListFragment
 
                     Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
                     if (f instanceof OrderListFragment) {
-                        // do something with f
                         ((OrderListFragment) f).refreshData();
                     }
                 }
@@ -136,10 +122,27 @@ public class OrderListActivity extends BaseActivity implements OrderListFragment
 
                     CashOrCreditDialogFragment dialog = new CashOrCreditDialogFragment();
                     dialog.show(getFragmentManager(), "CashOrCreditDialogFragment");
+
+                    String mUserID = SharedPrefUtil.getPersistedData(ApplicationContext.USERID, null);
+                    if (ad_user_rolesDBAdapter.isAdmin(Long.parseLong(mUserID)))
+                    {
+                        c_order.setSalesRep_ID(Long.parseLong(mUserID));
+                        Intent intent = new Intent(OrderListActivity.this, SalesRepListActivity.class);
+                         startActivityForResult(intent, 3);
+                    }
                 }
             }
         }
-    }//onActivityResult
+        else if (requestCode == 3) {
+            if(resultCode == Activity.RESULT_OK){
+                if (data != null) {
+                    ad_user = (AD_User) data.getSerializableExtra("ad_user");
+
+                    c_order.setSalesRep_ID(ad_user.getAD_User_ID());
+                }
+            }
+        }
+    }
 
     public void onCashOrCreditSelection(boolean isCash) {
         this.isCash = isCash;
@@ -150,9 +153,6 @@ public class OrderListActivity extends BaseActivity implements OrderListFragment
 
     private void updateOrder()
     {
-        String UserId = SharedPrefUtil.getPersistedData(ApplicationContext.USERID, null);
-
-        //C_Order c_order = new C_Order();
         c_order.setC_BPartner_ID(c_bPartner.getC_BPartner_ID());
         c_order.setCustomerName(c_bPartner.getName());
         c_order.setC_BPartner_Location_ID(c_bPartner.getC_BPartner_Location_ID());
@@ -161,7 +161,7 @@ public class OrderListActivity extends BaseActivity implements OrderListFragment
 
         c_order.setDateOrdered(new Date());
         c_order.setIsCash(isCash);
-        c_order.setSalesRep_ID(Long.parseLong(UserId));
+
         if (isCash)
         {
             c_order.setPaymentRule("B");
@@ -248,7 +248,6 @@ public class OrderListActivity extends BaseActivity implements OrderListFragment
 
         Fragment f = getFragmentManager().findFragmentById(R.id.article_list);
         if (f instanceof OrderListFragment) {
-            // do something with f
             ((OrderListFragment) f).refreshData();
         }
     }

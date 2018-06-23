@@ -36,22 +36,9 @@ import java.util.Iterator;
 
 import static com.keredwell.fieldsales.util.LogUtil.makeLogTag;
 
-/**
- * Lists all available quotes. This Activity supports a single pane (= smartphones) and a two pane mode (= large screens with >= 600dp width).
- *
- * Created by Andreas Schrade on 14.12.2015.
- */
 public class OrderCheckoutActivity extends BaseActivity implements OrderCheckoutFragment.Callback {
     private static final String TAG = makeLogTag(OrderCheckoutActivity.class);
 
-    /**
-     * Whether or not the activity is running on a device with a large screen
-     */
-    private boolean twoPaneMode;
-
-    /**
-     * Keep track of the order sync task to ensure we can cancel it if requested.
-     */
     private OrderSyncTask mOrderSysncTask = null;
     private View mProgressView;
     private View mOrderFormView;
@@ -84,24 +71,10 @@ public class OrderCheckoutActivity extends BaseActivity implements OrderCheckout
 
         updateTotalView();
 
-        if (isTwoPaneLayoutUsed()) {
-            twoPaneMode = true;
-            enableActiveItemState();
-        }
-
-        if (savedInstanceState == null && twoPaneMode) {
-            //setupDetailFragment();
-        }
-
         mOrderFormView = findViewById(R.id.order_main);
         mProgressView = findViewById(R.id.order_progress);
     }
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
     private void attemptSync() {
         if (mOrderSysncTask != null) {
             return;
@@ -111,21 +84,14 @@ public class OrderCheckoutActivity extends BaseActivity implements OrderCheckout
         View focusView = null;
 
         if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
             showProgress(true);
             mOrderSysncTask = new OrderSyncTask();
             mOrderSysncTask.execute((Void) null);
         }
     }
 
-    /**
-     * Shows the progress UI and hides the login form.
-     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -152,17 +118,11 @@ public class OrderCheckoutActivity extends BaseActivity implements OrderCheckout
                 }
             });
         } else {
-            // The ViewPropertyAnimator APIs are not available, so simply show
-            // and hide the relevant UI components.
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
             mOrderFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
 
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
     public class OrderSyncTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
@@ -306,19 +266,6 @@ public class OrderCheckoutActivity extends BaseActivity implements OrderCheckout
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
     }
-
-    /*private void setupDetailFragment() {
-        Customer customer = customers.get(0);
-
-        Bundle arguments = new Bundle();
-        arguments.putLong(CustomerDetailFragment.ARG_ITEM_ID, customer.getID());
-        arguments.putString(CustomerDetailFragment.ARG_ITEM_NAME, customer.getName());
-        arguments.putString(CustomerDetailFragment.ARG_ITEM_ADDRESS, customer.getAddress());
-        arguments.putString(CustomerDetailFragment.ARG_ITEM_TEL, customer.getTel());
-
-        CustomerDetailFragment fragment =  CustomerDetailFragment.newInstance(arguments);
-        getFragmentManager().beginTransaction().replace(R.id.article_detail_container, fragment).commit();
-    }*/
 
     /**
      * Enables the functionality that selected items are automatically highlighted.
