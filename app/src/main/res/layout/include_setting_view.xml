@@ -152,6 +152,44 @@ android:orientation="vertical">
         </android.support.design.widget.TextInputLayout>
 
         <TextView
+            android:id="@+id/setting_adUserServiceType"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_adUserServiceType" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/adUserServiceType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_adUserServiceType"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/setting_adUserRolesServiceType"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_adUserRolesServiceType" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/adUserRolesServiceType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/setting_adUserRolesServiceType"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
             android:id="@+id/setting_userServiceType"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
