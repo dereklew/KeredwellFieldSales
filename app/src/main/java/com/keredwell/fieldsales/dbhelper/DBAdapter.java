@@ -18,6 +18,17 @@ public class DBAdapter {
 
     public static final int DATABASE_VERSION = 1;
 
+    private static final String CREATE_TABLE_AD_USER = "CREATE TABLE " +
+            AD_UserDBAdapter.DATABASE_TABLE + "("
+            + AD_UserDBAdapter.COLUMN_AD_USER_ID + " INTEGER PRIMARY KEY, "
+            + AD_UserDBAdapter.COLUMN_C_BPARTNER_ID + " INTEGER, "
+            + AD_UserDBAdapter.COLUMN_NAME + " TEXT " + ");";
+
+    private static final String CREATE_TABLE_AD_USER_ROLES = "CREATE TABLE " +
+            AD_User_RolesDBAdapter.DATABASE_TABLE + "("
+            + AD_User_RolesDBAdapter.COLUMN_AD_USER_ID + " INTEGER PRIMARY KEY, "
+            + AD_User_RolesDBAdapter.COLUMN_AD_ROLE_ID + " INTEGER " + ");";
+
     private static final String CREATE_TABLE_C_BP_GROUP = "CREATE TABLE " +
             C_BP_GroupDBAdapter.DATABASE_TABLE + "("
             + C_BP_GroupDBAdapter.COLUMN_C_BP_GROUP_ID + " INTEGER PRIMARY KEY, "
@@ -170,6 +181,8 @@ public class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db)
         {
+            db.execSQL(CREATE_TABLE_AD_USER);
+            db.execSQL(CREATE_TABLE_AD_USER_ROLES);
             db.execSQL(CREATE_TABLE_C_BP_GROUP);
             db.execSQL(CREATE_TABLE_C_BPARTNER_LOCATION);
             db.execSQL(CREATE_TABLE_C_BPARTNER);
@@ -187,6 +200,8 @@ public class DBAdapter {
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
+            db.execSQL("DROP TABLE IF EXISTS " + AD_UserDBAdapter.DATABASE_TABLE);
+            db.execSQL("DROP TABLE IF EXISTS " + AD_User_RolesDBAdapter.DATABASE_TABLE);
             db.execSQL("DROP TABLE IF EXISTS " + C_BP_GroupDBAdapter.DATABASE_TABLE);
             db.execSQL("DROP TABLE IF EXISTS " + C_BPartner_LocationDBAdapter.DATABASE_TABLE);
             db.execSQL("DROP TABLE IF EXISTS " + C_BPartnerDBAdapter.DATABASE_TABLE);
